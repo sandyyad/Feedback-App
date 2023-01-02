@@ -10,3 +10,27 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.main-div {
+  background-image: linear-gradient(to right, #ffebeb, #ffc0bb);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.sub-div {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+}
+.heading {
+  font-family: 'Roboto';
+  font-size: 22px;
+  color: #0f172a;
+  margin-bottom: 40px;
+}
+.emojiContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

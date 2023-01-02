@@ -1,1 +1,13 @@
 /* Write your CSS code here. */
+.Image {
+  height: 50px;
+  width: 50px;
+}
+.list-element {
+  list-style: none;
+}
+.button {
+  background-color: transparent;
+  border-width: 0px;
+  cursor: pointer;
+}

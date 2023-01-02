@@ -27,17 +27,37 @@ const resources = {
 class App extends Component {
   state = {isGood: false}
 
+  getResults = () => {
+    this.setState(prevState => ({isGood: !prevState.isGood}))
+  }
+
   render() {
     const {isGood} = this.state
-    const emojis = resources.emojis
+    const emoji = resources.emojis
 
     return (
-      <div>
-        <ul>
-          {emojis.map(eachEmoji => (
-            <Feedback eachEmoji={eachEmoji} key={eachEmoji.id} />
-          ))}
-        </ul>
+      <div className="main-div">
+        <div className="sub-div">
+          <h1 className="heading">
+            How satisfied are you with our
+            <br /> Customer support performance
+          </h1>
+          <ul className="emojiContainer">
+            {emoji.map(eachEmoji => (
+              <Feedback
+                getUpdate={this.getResults}
+                eachEmoji={eachEmoji}
+                key={eachEmoji.id}
+              />
+            ))}
+          </ul>
+          {isGood && (
+            <div>
+              <img src={resources.loveEmojiUrl} />
+              <h1>Thank you</h1>
+            </div>
+          )}
+        </div>
       </div>
     )
   }
